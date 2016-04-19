@@ -20,7 +20,7 @@ foreach ($xdebug_settings_array as $value){
 		$parameter = explode("=",trim($value));
 		if ($parameter[0] == ';xdebug.default_enable') $parameter[0] = 'xdebug.default_enable';
 		if (($parameter[0] == 'xdebug.default_enable') AND ($parameter[1] == 'Off')) $parameter[1] = 0;
-		$xdebug_array = $xdebug_array + array(trim($parameter[0]) => trim($parameter[1]));
+		$xdebug_array = $xdebug_array + array(trim($parameter[0], ';') => trim($parameter[1]));
 	}
 }
 ?>
